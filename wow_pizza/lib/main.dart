@@ -8,17 +8,24 @@ import 'screens/twitter_page.dart';
 import 'screens/facebook_page.dart';
 
 void main() {
-  runApp(const ArlysPizzaApp());
+  runApp(const RizzaApp());
 }
 
-class ArlysPizzaApp extends StatelessWidget {
-  const ArlysPizzaApp({super.key});
+class RizzaApp extends StatelessWidget {
+  const RizzaApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Arly's Pizza",
+      title: 'Rizza',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.pink,
+          foregroundColor: Colors.white,
+        ),
+      ),
       initialRoute: '/',
       routes: {
         '/': (context) => const HomePage(),
