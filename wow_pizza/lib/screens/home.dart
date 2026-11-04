@@ -6,25 +6,57 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Rizza")),
-      body: Center(
+      appBar: AppBar(
+        title: const Text('Rizza'),
+        backgroundColor: Colors.pink,
+        foregroundColor: Colors.white,
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Home — Elisa will build this'),
+            const Text(
+              'Welcome to Rizza',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 16),
+            Image.asset(
+              'assets/images/rizza.jpg',
+              height: 180,
+              fit: BoxFit.cover,
+            ),
+            const SizedBox(height: 24),
             OutlinedButton(
               onPressed: () => Navigator.pushNamed(context, '/menu'),
-              child: const Text('Go to Menu'),
+              child: const Text('Our Menu'),
             ),
+            const SizedBox(height: 10),
             OutlinedButton(
               onPressed: () => Navigator.pushNamed(context, '/about'),
-              child: const Text('Go to About'),
+              child: const Text('About Us'),
             ),
+            const SizedBox(height: 10),
             OutlinedButton(
               onPressed: () => Navigator.pushNamed(context, '/contact'),
-              child: const Text('Go to Contact'),
+              child: const Text('Contact Us'),
             ),
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: () => Navigator.pushNamed(context, '/twitter'),
+                  icon: Image.asset('assets/images/twitter.png', width: 40),
+                ),
+                const SizedBox(width: 20),
+                IconButton(
+                  onPressed: () => Navigator.pushNamed(context, '/facebook'),
+                  icon: Image.asset('assets/images/facebook.png', width: 40),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),
