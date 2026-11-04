@@ -1,13 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
-class FacebookPage extends StatelessWidget {
+class FacebookPage extends StatefulWidget {
   const FacebookPage({super.key});
+
+  @override
+  State<FacebookPage> createState() => _FacebookPageState();
+}
+
+class _FacebookPageState extends State<FacebookPage> {
+  late final WebViewController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..loadRequest(Uri.parse('https://www.facebook.com'));
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Facebook')),
-      body: const Center(child: Text('Facebook — Erica will build this')),
+      appBar: AppBar(
+        title: const Text('Facebook'),
+        backgroundColor: Colors.pink,
+        foregroundColor: Colors.white,
+      ),
+      body: WebViewWidget(controller: controller),
     );
   }
 }
