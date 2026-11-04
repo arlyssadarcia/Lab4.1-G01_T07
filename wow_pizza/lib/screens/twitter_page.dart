@@ -9,7 +9,7 @@ class TwitterPage extends StatefulWidget {
 }
 
 class _TwitterPageState extends State<TwitterPage> {
-  late final WebViewController_controller;
+  late final WebViewController _controller;
 
   @override
   void initState() {
@@ -24,7 +24,7 @@ class _TwitterPageState extends State<TwitterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const text('Twitter / X'),
+        title: const Text('Twitter / X'),
         backgroundColor: Colors.pink,
         foregroundColor: Colors.white,
       ),
