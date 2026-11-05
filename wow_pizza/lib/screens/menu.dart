@@ -14,7 +14,7 @@ class MenuPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Our Menu'),
+        title: const Text('Menu'),
         backgroundColor: Colors.pink,
         foregroundColor: Colors.white,
       ),
